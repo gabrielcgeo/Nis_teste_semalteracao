@@ -88,7 +88,19 @@ $(window).on('load', function() {
       maxZoom: 18
     }).addTo(map);
   }
+  
+///escala inicio
 
+
+// Cria o objeto do controle da barra de escala
+var scale = L.control.scale({position: 'bottomright'});
+
+// Adiciona o controle ao mapa
+scale.addTo(map);
+
+
+
+///escala final
   function initMap(options, chapters) {
     createDocumentSettings(options);
 
@@ -111,7 +123,7 @@ $(window).on('load', function() {
     addBaseMap();
 
     // Add zoom controls if needed
-    if (getSetting('_zoomControls') !== 'off') {
+    if (getSetting('_zoomControls') !== 'on') {
       L.control.zoom({
         position: getSetting('_zoomControls')
       }).addTo(map);
