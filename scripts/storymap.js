@@ -113,10 +113,10 @@ scale.addTo(map);
     // Add logo
     if (getSetting('_mapLogo')) {
       $('#logo').append('<img src="' + getSetting('_mapLogo') + '" />');
-      $('#top').css('height', '60px');
+      $('#top').css('height', '160px');
     } else {
       $('#logo').css('display', 'none');
-      $('#header').css('padding-top', '25px');
+      $('#header').css('padding-top', '125px');
     }
 
     // Load tiles
@@ -128,7 +128,10 @@ scale.addTo(map);
         position: getSetting('_zoomControls')
       }).addTo(map);
     }
-
+    // Enable scrollWheelZoom
+    map.scrollWheelZoom.enable();
+    
+    
     var markers = [];
 
     var markActiveColor = function(k) {
